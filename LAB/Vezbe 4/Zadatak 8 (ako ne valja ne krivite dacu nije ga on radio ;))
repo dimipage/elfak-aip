@@ -1,0 +1,24 @@
+#include <stdio.h>
+void main ()
+{
+    int a[20][20], i, j, m, k, n;
+    scanf("%d %d",&m, &n);
+    //ovdek unosimo matricu tj elementi njeni
+    for (i=0; i<m; i++)
+        for (j=0; j<n; j++)
+            scanf("%d", &a[i][j]);
+    //ovdek proveravamo da li je element ispred trenutnog elementa veci
+    //ako jeste onda ce k da se poveca za 1 i ako su svi elementi poredjani kako se trazi
+    //ondak ce k da se poveca do n-1 (tolko max moz da dodje) i onda ce sa if da se proveri
+    //ako jeste onda je ta vrsta poredjana i ce se ispise, ako nije onda ekstra
+    for (i=0; i<m; i++)
+        {
+            k=0;
+            for (j=0; j<n-1; j++)
+                if (a[i][j]<=a[i][j+1])
+                    k++;
+            if (k==n-1)
+                printf("%d ", i);
+        }
+        //pozzzzzzzzzzzz
+}
